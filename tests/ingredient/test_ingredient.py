@@ -16,7 +16,7 @@ def test_ingredient():
         Restriction.ANIMAL_DERIVED
     }
     assert hash(ingredients0) == hash(ingredients1)
-    assert hash(ingredients0 != ingredients2)
+    assert hash(ingredients0) != hash(ingredients2)
     assert repr(ingredients0) == "Ingredient('manteiga')"
     assert ingredients0.__eq__(ingredients1) is True
     assert ingredients0.__eq__(ingredients2) is False
