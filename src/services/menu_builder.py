@@ -33,9 +33,7 @@ class MenuBuilder:
                 "price": dish.price,
                 "restrictions": dish.get_restrictions(),
             }
-            for dish in self.menu_data.dishes if (
-                dish.get_ingredients() is not None and
-                restriction not in dish.get_restrictions()
-            )
-            ]
+            for dish in self.menu_data.dishes
+            if restriction not in dish.get_restrictions()
+        ]
         return pd.DataFrame(main_menu)
